@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>마이페이지</h2>
+  <div>
+    <span id="username"></span>님 환영합니다</div>
+  <a href="/">홈으로 이동</a>
+
+  <script>
+    let cookie = document.cookie;
+    console.log('쿠키값', cookie);
+
+    let username = cookie.split('=')[1];
+    document.querySelector('#username').innerHTML = username;
+  </script>
+</body>
+
+</html>
