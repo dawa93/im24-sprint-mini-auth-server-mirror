@@ -18,7 +18,7 @@
   <a href="/">홈으로 이동</a>
 
   <script>
-    let cookie = document.cookie;
+    const cookie = document.cookie;
 
     if (cookie) {
       document.querySelector('#welcome').style.display = 'block';
@@ -26,7 +26,14 @@
       document.querySelector('#deny').style.display = 'block';
     }
 
-    let username = cookie.split('=')[1];
+    const cookieObj = cookie.split('; ').reduce((obj, kv) => {
+      const key = kv.split('=')[0];
+      const value = kv.split('=')[1];
+      obj[key] = value;
+      return obj;
+    }, {});
+
+    const username = cookieObj['login']
     document.querySelector('#username').innerHTML = username;
   </script>
 </body>
