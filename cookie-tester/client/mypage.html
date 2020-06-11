@@ -8,14 +8,23 @@
 </head>
 
 <body>
-  <h2>마이페이지</h2>
-  <div>
-    <span id="username"></span>님 환영합니다</div>
+  <h2>🍪 마이페이지</h2>
+  <div id="welcome" style="display: none">
+    <span id="username"></span>님 환영합니다
+  </div>
+  <div id="deny" style="display: none;">
+    유효하지 않은 사용자입니다.
+  </div>
   <a href="/">홈으로 이동</a>
 
   <script>
     let cookie = document.cookie;
-    console.log('쿠키값', cookie);
+
+    if (cookie) {
+      document.querySelector('#welcome').style.display = 'block';
+    } else {
+      document.querySelector('#deny').style.display = 'block';
+    }
 
     let username = cookie.split('=')[1];
     document.querySelector('#username').innerHTML = username;

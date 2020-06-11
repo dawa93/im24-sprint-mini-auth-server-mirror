@@ -8,14 +8,24 @@
 </head>
 
 <body>
-  <h2>🍪 쿠키스테이츠</h2>
+  <h2>🔑 세션스테이츠</h2>
 
-  <a href="/login">로그인</a>
+  <form method="POST" action="/login">
+    <label>
+      아이디
+      <input type="text" name="username">
+    </label>
+    <label>
+      비밀번호
+      <input type="password" name="password">
+    </label>
+    <button>로그인</button>
+  </form>
 
   <hr>
 
   <div id="val"></div>
-  <div id="msg" style="display: none;">이미 로그인되어있군요!</div>
+  <div id="msg" style="display: none;">쿠키는 존재하지만, 서버에 세션이 없어서 인증되지 않았습니다.</div>
 
   <script>
     document.querySelector("#val").innerHTML = '현재 쿠키값:' + document.cookie

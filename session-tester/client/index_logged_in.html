@@ -8,21 +8,16 @@
 </head>
 
 <body>
-  <h2>🍪 쿠키스테이츠</h2>
+  <h2>🔑 세션스테이츠</h2>
 
-  <a href="/login">로그인</a>
-
+  <div>Welcome Home!</div>
   <hr>
 
   <div id="val"></div>
-  <div id="msg" style="display: none;">이미 로그인되어있군요!</div>
+  <div id="msg">로그인 되어 있습니다!</div>
 
   <script>
     document.querySelector("#val").innerHTML = '현재 쿠키값:' + document.cookie
-
-    if (document.cookie) {
-      document.querySelector("#msg").style.display = 'block';
-    }
   </script>
 
 </body>

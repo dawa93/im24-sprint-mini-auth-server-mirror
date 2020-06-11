@@ -11,7 +11,10 @@ http.createServer((request, response) => {
     console.error(err);
   });
   if (request.method === 'GET' && request.url === '/login') {
-    response.setHeader('Set-Cookie', ['login=kimcoding']);
+    // TODO:
+    // express의 기능을 사용하여, 쿠키를 설정하세요.
+    // 키는 login 값은 kimcoding 으로 설정하세요.
+
     response.write(fs.readFileSync('client/mypage.html'));
     request.pipe(response);
   }
