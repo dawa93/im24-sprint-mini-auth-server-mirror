@@ -49,8 +49,6 @@ describe('GET /', function () {
   });
 
   it('로그인에 실패하면, 에러 status code와 함께 unauthorized가 표시되어야 합니다', (done) => {
-    const token = SHA256('park').toString();
-
     request('http://localhost:8080')
       .post('/login')
       .send('username=park&password=wrongpassword')
