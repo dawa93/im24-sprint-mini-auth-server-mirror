@@ -90,3 +90,11 @@ http.createServer((request, response) => {
 }).listen(8080);
 
 console.log('open http://localhost:8080');
+
+
+// this is for testing, do not remove below this line
+module.exports = {
+  pushTokenForTesting: (token) => {
+    SESSIONS.push(token);
+  }
+}
